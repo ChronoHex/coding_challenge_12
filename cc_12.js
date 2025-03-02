@@ -41,12 +41,22 @@ function addProductItem(productName) {
 
   // adding a click event to removes items when selected
   newProductItem.addEventListener("click", () => {
-    inventoryList.removeChild(newProductItem);
+    removeProductItem(newProductItem);
   });
 
   inventoryList.appendChild(newProductItem);
 };
 
+// function for removing roduct items
+function removeProductItem(item) {
+  const inventoryList = document.getElementById("inventoryList");
+  inventoryList.removeChild(item);
+};
+
+// added event listener to "add product" button
+document.getElementById("addProductButton").addEventListener("click", () => {
+  addProductItem("New Product");
+})
 //adding products as examples
 addProductItem("Nintendo Switch");
 addProductItem("Gamecube");
@@ -58,7 +68,7 @@ customerSection.addEventListener("click", () => {
   console.log("Has been selected");
 });
 
-const customerCards = document.querySelectorAll(".customercard");
+const customerCards = document.querySelectorAll(".customer-card");
 customerCards.forEach((card) => {
   card.style.backgroundColor = "purple";
   card.addEventListener("click", (event) => {
