@@ -50,3 +50,19 @@ function addProductItem(productName) {
 //adding products as examples
 addProductItem("Nintendo Switch");
 addProductItem("Gamecube");
+
+// task 4
+const customerSection = document.getElementById("customerSection");
+// adding a click event listener
+customerSection.addEventListener("click", () => {
+  console.log("Has been selected");
+});
+
+const customerCards = document.querySelectorAll(".customercard");
+customerCards.forEach((card) => {
+  card.style.backgroundColor = "purple";
+  card.addEventListener("click", (event) => {
+    console.log("Has been selected");
+    event.stopPropagation();
+  });
+});
