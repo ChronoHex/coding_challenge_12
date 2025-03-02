@@ -29,3 +29,24 @@ metricCardsArray.forEach(card => {
   card.innerText += ' - Updated';
   card.style.backgroundColor = 'orange'; // Adding a background color
 });
+
+// task 3
+function addProductItem(productName) {
+  const inventoryList = document.getElementById("inventoryList");
+  const newProductItem = document.createElement("li");
+
+  newProductItem.setAttribute("class", "product-item");
+  newProductItem.setAttribute("data-product", productName);
+  newProductItem.innerText = productName;
+
+  // adding a click event to removes items when selected
+  newProductItem.addEventListener("click", () => {
+    inventoryList.removeChild(newProductItem);
+  });
+
+  inventoryList.appendChild(newProductItem);
+};
+
+//adding products as examples
+addProductItem("Nintendo Switch");
+addProductItem("Gamecube");
